@@ -22,8 +22,8 @@ dealerRouter.post("/register",async(req,res)=>{
 dealerRouter.post("/login",async(req,res)=>{
     const {email,password} = req.body
     try {
-        const dealer = await DealerModel.findOne({email})
-        if(dealer){
+        const dealer = await DealerModel.find({email})
+        if(dealer.length>0){
             bcrypt.compare(password, dealer.password, async(err, result)=> {
                 // result == true
                 res.status(200).send({"msg":"Login Successful!","token":jwt.sign({dealerID:dealer._id},"buycars")})

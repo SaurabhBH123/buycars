@@ -17,6 +17,6 @@ const inventorySchema = mongoose.Schema({
     versionKey:false
 })
 
-const InventoryModel = mongoose.model("Inventory",inventorySchema)
+const InventoryModel = mongoose.model("inventory",inventorySchema)
 
 module.exports = {InventoryModel}
