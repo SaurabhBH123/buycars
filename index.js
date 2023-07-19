@@ -23,7 +23,7 @@ app.get("/",(req,res)=>{
 
 app.listen(process.env.PORT,async()=>{
     try {
-        await mongoose.connect("mongodb+srv://bhandarisaurabh:bhandarisaurabh@cluster0.k9ntg6n.mongodb.net/buyccorp?retryWrites=true&w=majority")
+        await mongoose.connect(`${process.env.mongoURL}`)
         console.log("connected to DB")
     } catch (error) {
         console.log(error)
