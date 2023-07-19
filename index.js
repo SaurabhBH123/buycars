@@ -1,10 +1,12 @@
 const express = require("express")
 const cors = require("cors")
-const { connection } = require("./db")
+const mongoose = require("mongoose")
+// const { connection } = require("./db")
 const { dealerRouter } = require("./routes/dealer.routes")
 const { inventoryRouter } = require("./routes/inventory.routes")
 const { oemRouter } = require("./routes/oem.routes")
-require("dotenv").config()
+const dotenv = require("dotenv")
+dotenv.config()
 
 const app = express()
 
@@ -21,7 +23,7 @@ app.get("/",(req,res)=>{
 
 app.listen(process.env.PORT,async()=>{
     try {
-        await connection
+        await mongoose.connect(process.env.mongoURL)
         console.log("connected to DB")
     } catch (error) {
         console.log(error)
