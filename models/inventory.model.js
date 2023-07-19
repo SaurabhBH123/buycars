@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.set('bufferCommands', false);
+// mongoose.set('bufferCommands', false);
 const inventorySchema = mongoose.Schema({
     odometerKms:Number,
     majorScratches:Boolean,

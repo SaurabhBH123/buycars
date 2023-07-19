@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.set('bufferCommands', false);
+// mongoose.set('bufferCommands', false);
 const dealerSchema = mongoose.Schema({
     name:{type:String,required:true},
     email:{type:String,required:true},
