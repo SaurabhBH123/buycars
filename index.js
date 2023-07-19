@@ -23,6 +23,7 @@ app.get("/",(req,res)=>{
 
 app.listen(process.env.PORT,async()=>{
     try {
+        console.log(process.env.mongoURL)
         await mongoose.connect(process.env.mongoURL)
         console.log("connected to DB")
     } catch (error) {
