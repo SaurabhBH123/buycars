@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+mongoose.set('bufferCommands', false);
 const oemSchema = mongoose.Schema({
     modelName:String,
     year:String,
