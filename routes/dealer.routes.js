@@ -26,7 +26,7 @@ dealerRouter.post("/login",async(req,res)=>{
         if(dealer.length>0){
             bcrypt.compare(password, dealer.password, async(err, result)=> {
                 // result == true
-                res.status(200).send({"msg":"Login Successful!","token":jwt.sign({dealerID:dealer._id},"buycars")})
+                res.status(200).send({"msg":"Login Successful!","token":jwt.sign({dealerID:dealer._id},"buycars"),"name":dealer[0].name})
             });
         }else{
             res.status(400).send({"msg":"Wrong Credentials!"})
